@@ -14,8 +14,9 @@ const Home: NextPage = () => {
   const address = useAddress();
   const { contract, isLoading } = useContract(process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS);
   
-  if (!address) return <Login />
   if (isLoading) return <Loading />
+
+  if (!address) return <Login />
 
   return (
     <div className="bg-[#091B18] min-h-screen flex flex-col">
